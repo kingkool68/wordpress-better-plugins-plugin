@@ -1,0 +1,14 @@
+.hide {
+display:none;
+}
+label,
+input.button {
+display:block;
+}
+label {
+padding-bottom:3px;
+}
+.wp-core-ui input.button-primary {
+display:block;
+margin: 15px 0 45px;
+}
