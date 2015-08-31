@@ -1,6 +1,6 @@
-=== Russell's Plugin Enhancement Pack ===
+=== Better Plugins Plugin ===
 Contributors: kingkool68
-Tags: admin, tools, plugins, management, filtering, productivity
+Tags: admin, tools, plugins, management, filtering, productivity, multisite,
 Requires at least: 3.0.1
 Tested up to: 4.3
 Stable tag: trunk
@@ -41,8 +41,8 @@ This section describes how to install the plugin and get it working.
 
 e.g.
 
-1. Upload the `rh-plugin-enhancement-pack` folder to the `/wp-content/plugins/` directory
-1. Activate the Russell's Plugin Enhancement Pack plugin through the 'Plugins' menu in WordPress
+1. Upload the `better-plugins-plugin` folder to the `/wp-content/plugins/` directory
+1. Activate the Better Plugins Plugin through the 'Plugins' menu in WordPress
 
 == Frequently Asked Questions ==
 

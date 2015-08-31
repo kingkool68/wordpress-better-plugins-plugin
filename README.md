@@ -1,4 +1,4 @@
-# Russell's Plugin Enhancement Pack
+# The Better Plugins Plugin
 
 This WordPress plugin makes dealing with plugins easier by providing tools for filtering, comparing, and reporting plugins.
 
