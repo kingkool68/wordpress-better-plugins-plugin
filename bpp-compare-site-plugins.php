@@ -39,7 +39,10 @@ class BPP_Compare_Site_Plugins {
 	public function compare_plugins_admin_page() {
 		wp_enqueue_style('bpp-compare-site-plugins-styles');
 
-		if( $_GET['bulk-activate'] == true || $_GET['bulk-network-activate'] == true ) {
+		if(
+			( isset( $_GET['bulk-activate'] ) && $_GET['bulk-activate'] == true ) ||
+			( isset( $_GET['bulk-network-activate'] ) && $_GET['bulk-network-activate'] == true )
+		) {
 			pew_compare_site_plugins_bulk_activate();
 		}
 
@@ -61,9 +64,15 @@ class BPP_Compare_Site_Plugins {
 			$this->sites_plugins['network_active'] = array_keys( 		get_site_option('active_sitewide_plugins') );
 		}
 
-		if( ( intval( $_POST['site_id'] ) > 0 ||
-				$_POST['plugins']) &&
-				wp_verify_nonce( $_POST['nonce'], get_current_user_id() )
+		$posted_site_id = 0;
+		if( isset( $_POST['site_id'] ) ) {
+			$posted_site_id = $_POST['site_id'];
+		}
+
+		if(
+			( $posted_site_id > 0 || isset( $_POST['plugins'] ) ) &&
+			isset( $_POST['nonce'] ) &&
+			wp_verify_nonce( $_POST['nonce'], get_current_user_id() )
 		) {
 			$this->admin_page_step_2();
 		} else {
