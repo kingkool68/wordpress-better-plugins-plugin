@@ -1,6 +1,6 @@
 <?php
 
-class RH_Plugin_Report {
+class BPP_Plugin_Report {
 	/**
 	 * Holds plugin stats so they are only generated once per page load.
 	 * @var (boolean/array)
@@ -20,7 +20,7 @@ class RH_Plugin_Report {
 	 * Add a network admin menu to view the plugin report. It lives under the Plugins admin menu item.
 	 */
 	public function network_admin_menu() {
-		add_plugins_page( 'Plugins Report', 'Plugins Report', 'activate_plugins', 'rh-plugins-report', array( $this, 'do_plugin_report' ) );
+		add_plugins_page( 'Plugins Report', 'Plugins Report', 'activate_plugins', 'bpp-plugins-report', array( $this, 'do_plugin_report' ) );
 	}
 
 	/**
@@ -205,5 +205,5 @@ class RH_Plugin_Report {
 }
 
 // Create the class and kick things off...
-$rh_plugin_report = new RH_Plugin_Report();
-$rh_plugin_report->setup();
+$bpp_plugin_report = new bpp_Plugin_Report();
+$bpp_plugin_report->setup();

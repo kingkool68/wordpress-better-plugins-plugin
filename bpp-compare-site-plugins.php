@@ -1,6 +1,6 @@
 <?php
 
-class RH_Compare_Site_Plugins {
+class BPP_Compare_Site_Plugins {
 
 	/**
 	 * Holds the list of plugin details for the current site.
@@ -22,14 +22,14 @@ class RH_Compare_Site_Plugins {
 	 * Register the CSS file for the plugin comparison admin page.
 	 */
 	public function register_admin_styles() {
-		wp_register_style( 'rh-compare-site-plugins-styles', plugin_dir_url( __FILE__ ) . 'css/rh-compare-site-plugins.css', array(), '1', 'all' );
+		wp_register_style( 'bpp-compare-site-plugins-styles', plugin_dir_url( __FILE__ ) . 'css/bpp-compare-site-plugins.css', array(), '1', 'all' );
 	}
 
 	/**
 	 * Add a 'Compare' sub-menu item under the Plugins admin menu.
 	 */
 	public function admin_menu() {
-		add_plugins_page( 'Compare Site Plugins', 'Compare', 'activate_plugins', 'rh-compare-site-plugins', array( $this, 'compare_plugins_admin_page' ) );
+		add_plugins_page( 'Compare Site Plugins', 'Compare', 'activate_plugins', 'bpp-compare-site-plugins', array( $this, 'compare_plugins_admin_page' ) );
 	}
 
 	/**
@@ -37,7 +37,7 @@ class RH_Compare_Site_Plugins {
 	 * @return [type] [description]
 	 */
 	public function compare_plugins_admin_page() {
-		wp_enqueue_style('rh-compare-site-plugins-styles');
+		wp_enqueue_style('bpp-compare-site-plugins-styles');
 
 		if( $_GET['bulk-activate'] == true || $_GET['bulk-network-activate'] == true ) {
 			pew_compare_site_plugins_bulk_activate();
@@ -80,7 +80,7 @@ class RH_Compare_Site_Plugins {
 		?>
 
 		<h1>Compare Site Plugins</h1>
-		<form action="plugins.php?page=rh-compare-site-plugins" method="post">
+		<form action="plugins.php?page=bpp-compare-site-plugins" method="post">
 			<label for="plugins">Paste the <strong>Plugin Code</strong> from another site running this plugin</label>
 			<textarea name="plugins" id="plugins" rows="5" cols="70"></textarea>
 
@@ -169,7 +169,7 @@ class RH_Compare_Site_Plugins {
 				<h2>Active Plugins</h2>
 				<p>The following plugins need to be activated for this site.</p>
 
-				<form action="plugins.php?page=rh-compare-site-plugins&bulk-activate=true" method="post">
+				<form action="plugins.php?page=bpp-compare-site-plugins&bulk-activate=true" method="post">
 					<ol>
 						<?php $this->render_plugin_list_items( $active_plugins, false, true ); ?>
 					</ol>
@@ -187,7 +187,7 @@ class RH_Compare_Site_Plugins {
 				<h2>Network Plugins</h2>
 				<p>The following plugins need to be network activated for <?php echo $other_sites_plugins['name']; ?>.</p>
 
-				<form action="plugins.php?page=rh-compare-site-plugins&bulk-network-activate=true" method="post">
+				<form action="plugins.php?page=bpp-compare-site-plugins&bulk-network-activate=true" method="post">
 					<ol>
 						<?php $this->render_plugin_list_items( $network_plugins, false, true ); ?>
 					</ol>
@@ -304,7 +304,7 @@ class RH_Compare_Site_Plugins {
 				$network_label = 'Network ';
 			}
 
-			$updated_message = $network_label . 'Activated ' . count($checkboxes) . ' ' . $label;
+			$updated_message = $network_label . 'Activated ' . count( $checkboxes ) . ' ' . $label;
 			?>
 			<div class="updated" id="message"><p><?php echo $updated_message; ?></p></div>
 			<?php
@@ -410,5 +410,5 @@ class RH_Compare_Site_Plugins {
 }
 
 // Create the class and kick things off...
-$rh_compare_site_plugins = new RH_Compare_Site_Plugins();
-$rh_compare_site_plugins->setup();
+$bpp_compare_site_plugins = new BPP_Compare_Site_Plugins();
+$bpp_compare_site_plugins->setup();

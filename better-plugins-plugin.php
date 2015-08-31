@@ -1,16 +1,16 @@
 <?php
 /*
-Plugin Name: Russell's Plugin Enhancement Pack
+Plugin Name: Better Plugins Plugin
 Description: Makes dealing with plugins easier by providing tools for comparing, reporting, and filtering plugins.
 Version: 0.1
 Author: Russell Heimlich
 Author URI: http://www.russellheimlich.com
-GitHub Plugin URI: kingkool68/rh-plugin-enhancement-pack
+GitHub Plugin URI: kingkool68/wordpress-better-plugins-plugin
 */
 
 
 // Make the lists of plugins filterable as you type thanks to this handy snippit of JavaScript.
-function rh_plugins_footer() {
+function bpp_plugins_footer() {
 ?>
 <script>
 	// via https://github.com/charliepark/faq-patrol
@@ -32,15 +32,15 @@ function rh_plugins_footer() {
 </script>
 <?php
 }
-add_action( 'admin_footer-plugins.php', 'rh_plugins_footer' );
+add_action( 'admin_footer-plugins.php', 'bpp_plugins_footer' );
 
 
 // Network Plugins Report - Find which plugins aren't used on any site in your network from a single page.
 if( is_network_admin() ) {
-	include 'rh-plugins-report.php';
+	include 'bpp-plugins-report.php';
 }
 
 // Compare Site Plugins with an external site or another site in a network to see which ones need to be activated.
 if( is_admin() ) {
-	include 'rh-compare-site-plugins.php';
+	include 'bpp-compare-site-plugins.php';
 }
