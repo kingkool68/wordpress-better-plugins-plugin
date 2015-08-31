@@ -93,6 +93,10 @@ class BPP_Plugin_Report {
 		$network_actived_plugins = array_keys( get_site_option( 'active_sitewide_plugins' ) );
 
 		foreach( $all_plugins as $slug => $plugin ) {
+			// Make sure the 'active_sites' key is set to prevent undefined index errors.
+			$all_plugins[ $slug ]['active_sites'] = array();
+
+			// Note if the plugin is network activated.
 			if( in_array( $slug, $network_actived_plugins ) ) {
 				$all_plugins[ $slug ]['Network'] = true;
 			}
@@ -103,10 +107,6 @@ class BPP_Plugin_Report {
 			switch_to_blog( $blog_id );
 			$active_plugins = get_option( 'active_plugins', array() );
 			foreach( $active_plugins as $slug ) {
-				if( !isset( $all_plugins[ $slug ]['active_sites'] ) ) {
-					$all_plugins[ $slug ]['active_sites'] = array();
-				}
-
 				if( !in_array( $slug, $network_actived_plugins ) ) {
 					$all_plugins[ $slug ]['active_sites'][] = $blog_id;
 				}
