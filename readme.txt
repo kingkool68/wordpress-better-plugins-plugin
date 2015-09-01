@@ -1,5 +1,6 @@
 === Better Plugins Plugin ===
 Contributors: kingkool68
+Donate link: https://www.paypal.me/kingkool68
 Tags: admin, tools, plugins, management, filtering, productivity, multisite,
 Requires at least: 3.0.1
 Tested up to: 4.3
