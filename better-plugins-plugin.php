@@ -2,7 +2,7 @@
 /*
 Plugin Name: Better Plugins Plugin
 Description: Makes dealing with plugins easier by providing tools for comparing, reporting, and filtering plugins.
-Version: 0.1
+Version: 1.0
 Author: Russell Heimlich
 Author URI: http://www.russellheimlich.com
 GitHub Plugin URI: kingkool68/wordpress-better-plugins-plugin
