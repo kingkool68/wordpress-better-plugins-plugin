@@ -2,6 +2,8 @@
 
 This WordPress plugin makes dealing with plugins easier by providing tools for filtering, comparing, and reporting plugins.
 
+[Available on the WordPress plugin repo](https://wordpress.org/plugins/better-plugins/)
+
 ## Quickly Find the Plugin You're Looking For on the Plugins Screen
 
 ![Animated demo of filtering the list of plugins on the Plugins Admin Screen](https://cloud.githubusercontent.com/assets/867430/9484460/a02de59a-4b7a-11e5-9502-7f9161a508bb.gif)
